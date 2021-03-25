@@ -1,12 +1,17 @@
+import { leftnav } from "./leftnav";
+import { todomain } from "./todomain";
+
 console.log('Hello World');
 
 const todoButton = document.getElementById('todo-button')
 const modal = document.getElementById('modal')
+const formSubmit = document.getElementById('formSubmit')
 var span = document.getElementsByClassName("close")[0];
 
 
 todoButton.addEventListener('click', todoButtonModal)
 span.addEventListener('click', spanCloseFunc)
+formSubmit.addEventListener('click', formSubmitFunc)
 
 function todoButtonModal(){
     console.log('lol')
@@ -17,10 +22,13 @@ function spanCloseFunc() {
     modal.style.display = "none";
 }
 
+function formSubmitFunc() {
+    console.log(modalTaskName.value)
+    console.log(modalPriority.value)
+    console.log(modalDate.value)
+    console.log(modalTextArea.value)
 
-
-
-
+}
 
 
 
