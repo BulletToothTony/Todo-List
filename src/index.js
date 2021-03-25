@@ -6,6 +6,7 @@ console.log('Hello World');
 const todoButton = document.getElementById('todo-button')
 const modal = document.getElementById('modal')
 const formSubmit = document.getElementById('formSubmit')
+
 var span = document.getElementsByClassName("close")[0];
 
 
@@ -22,14 +23,37 @@ function spanCloseFunc() {
     modal.style.display = "none";
 }
 
+let todoListArray = []
+
 function formSubmitFunc() {
     console.log(modalTaskName.value)
     console.log(modalPriority.value)
     console.log(modalDate.value)
     console.log(modalTextArea.value)
 
+    todoListArray.push(modalTaskName.value)
+    console.log(todoListArray)
+
+
+
+
+    const newDiv = document.createElement('div')
+    newDiv.style.backgroundColor = 'red'
+    newDiv.innerHTML = modalTaskName.value
+
+    const todoMain = document.getElementById('todoMain')
+
+    todoMain.appendChild(newDiv)
+
+    arrayLoop()
+
 }
 
+function arrayLoop() {
+    for (let i = 0; i < todoListArray.length; i++) {
+        console.log(todoListArray[i])
+    }
+}
 
 
 

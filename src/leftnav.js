@@ -8,11 +8,9 @@ const leftnav = (() => {
     leftDiv.classList.add('nav-left')
     
     leftDiv.innerHTML = `<nav class="nav-left">
-    My Todo List!
-    <br>
+    <p>My Todo List!</p>
 
-    My Folders
-    <br>
+    <p>My Folders</p>
 
     <form action="submit">
         <input type="text" class="new-list-form" placeholder="New list name:"> 

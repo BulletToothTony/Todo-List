@@ -7,7 +7,7 @@ const todomain = (() => {
     todoMain.setAttribute('id', 'todoMain')
     todoMain.classList.add('todos')
     
-    todoMain.innerHTML = `<div class="todos">
+    todoMain.innerHTML = `<div class="todos" id=todoDiv>
     <h1 class="todo-header">Todo List:</h1>
 
     <div class="todo-list">

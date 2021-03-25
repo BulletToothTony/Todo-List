@@ -27,6 +27,10 @@ body {
     width: 250px;
 }
 
+.nav-left > p {
+    padding: 5px;
+}
+
 .main {
     display: flex;
     width: 100vw;
