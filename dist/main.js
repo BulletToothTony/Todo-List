@@ -1,0 +1,1 @@
+(()=>{console.log("Hello World");const e=document.getElementById("todo-button"),l=document.getElementById("modal");var o=document.getElementsByClassName("close")[0];e.addEventListener("click",(function(){console.log("lol"),l.style.display="block"})),o.addEventListener("click",(function(){l.style.display="none"}))})();
