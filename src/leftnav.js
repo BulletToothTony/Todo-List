@@ -1,6 +1,6 @@
 const leftnav = (() => {
     console.log('leftnav')
-
+    
     const mainContainer = document.getElementById('mainContainer')
 
     const leftDiv = document.createElement('div')
@@ -8,16 +8,15 @@ const leftnav = (() => {
     leftDiv.classList.add('nav-left')
     
     leftDiv.innerHTML = `<nav class="nav-left">
-    <p>My Todo List!</p>
+    <h1>My Todo List!</h1>
 
-    <p>My Folders</p>
-
+    <h2>My Folders <i class="far fa-folder"></i></h2>
     <form action="submit">
         <input type="text" class="new-list-form" placeholder="New list name:"> 
         <button>Submit</button>
     </form>
 
-    <button class="delete-btn" id="delete-btn">Delete</button>
+    <button class="delete-btn" id="delete-btn">Delete</button> <i class="fas fa-trash"></i>
 
 </nav>`
 
@@ -25,3 +24,4 @@ const leftnav = (() => {
 
 
 })();
+
