@@ -11,10 +11,10 @@ var span = document.getElementsByClassName("close")[0];
 
 class TodoItem {
     constructor(taskname, taskpriority, taskdate, taskdesc) {
-        this.taskname = modalTaskName.value;
-        this.taskpriority = modalPriority.value;
-        this.taskdate = modalDate.value;
-        this.taskdesc = modalTextArea.value;
+        this.taskname = taskname;
+        this.taskpriority = taskpriority;
+        this.taskdate = taskdate;
+        this.taskdesc = taskdesc;
     }
 }
 
@@ -33,17 +33,24 @@ function spanCloseFunc() {
 }
 
 let todoListArray = []
+let modalVal;
+let modalPri;
+let modalDate;
+let modalText;
+let newTodo;    
 
 function formSubmitFunc() {
     console.log(modalTaskName.value)
     console.log(modalPriority.value)
-    console.log(modalDate.value)
+    console.log(modalDatee.value)
     console.log(modalTextArea.value)
 
     todoListArray.push(modalTaskName.value)
     console.log(todoListArray)
 
-
+    // Add book to library
+    newTodo = new TodoItem(modalTaskName.value, modalPriority.value, modalDatee.value, modalTextArea.value);
+    todoListArray.push(newTodo)
 
 
     // const newDiv = document.createElement('div')
@@ -85,6 +92,7 @@ function createTodo(item) {
     newDiv.setAttribute('id', 'testTodo')
     newDiv.setAttribute('class', 'testTodoClass')
     newDiv.innerHTML = modalTaskName.value
+    newDiv.innerHTML += todoListArray[1].taskdesc
 
     const todoMain = document.getElementById('todoMain')
 

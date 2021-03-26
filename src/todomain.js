@@ -36,13 +36,7 @@ const todomain = (() => {
                 <option value="Medium">Medium</option>
                 <option value="High">High</option>
             </select>
-            Date due:
-            <input type="date" class="new-todo-task" id="modalDate" placeholder="Date due:"
-            value="2020-03-25"
-            min="2020-03-22"
-            max="2021-03-25"
-            
-            >
+            <input type="text" class="new-todo-task" id="modalDatee" placeholder="Date:">
             <textarea name="textareaTodo" id="modalTextArea" cols="30" rows="10" placeholder="Description..."></textarea>
 
 
@@ -58,3 +52,15 @@ const todomain = (() => {
 
 
 })();
+
+
+/*
+
+Date due:
+            <input type="date" class="new-todo-task" id="modalDate" placeholder="Date due:"
+            value="2020-03-25"
+            min="2020-03-22"
+            max="2021-03-25"
+            
+            >
+*/
