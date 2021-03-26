@@ -46,15 +46,18 @@ function formSubmitFunc() {
 
 
 
-    const newDiv = document.createElement('div')
-    newDiv.style.backgroundColor = 'red'
-    newDiv.innerHTML = modalTaskName.value
+    // const newDiv = document.createElement('div')
+    // // newDiv.style.backgroundColor = 'red'
+    // newDiv.setAttribute('id', 'testTodo')
+    // newDiv.setAttribute('class', 'testTodoClass')
+    // newDiv.innerHTML = modalTaskName.value
 
-    const todoMain = document.getElementById('todoMain')
+    // const todoMain = document.getElementById('todoMain')
 
-    todoMain.appendChild(newDiv)
+    // todoMain.appendChild(newDiv)
 
-    arrayLoop()
+    // arrayLoop()
+    renderTodoList()
 
 }
 
@@ -64,7 +67,37 @@ function arrayLoop() {
     }
 }
 
+function renderTodoList() {
+    const todoMainDiv = document.getElementById('todoMain');
+    const todos = document.querySelectorAll('.testTodoClass');
+    todos.forEach(todo => todoMainDiv.removeChild(todo))
 
+    
+    for (let i = 0; i < todoListArray.length; i++) {
+        createTodo(todoListArray[i]);
+    }
+}
+
+function createTodo(item) {
+    console.log('todocreate')
+    const newDiv = document.createElement('div')
+    // newDiv.style.backgroundColor = 'red'
+    newDiv.setAttribute('id', 'testTodo')
+    newDiv.setAttribute('class', 'testTodoClass')
+    newDiv.innerHTML = modalTaskName.value
+
+    const todoMain = document.getElementById('todoMain')
+
+    todoMain.appendChild(newDiv)
+
+}
+
+// function pop() {
+//     todoListArray.pop()
+//     for (let i = 0; i < todoListArray.length; i++) {
+//         createTodo(todoListArray[i]);
+//     }
+// }
 
 
 
