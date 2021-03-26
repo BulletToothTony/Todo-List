@@ -9,6 +9,15 @@ const formSubmit = document.getElementById('formSubmit')
 
 var span = document.getElementsByClassName("close")[0];
 
+class TodoItem {
+    constructor(taskname, taskpriority, taskdate, taskdesc) {
+        this.taskname = modalTaskName.value;
+        this.taskpriority = modalPriority.value;
+        this.taskdate = modalDate.value;
+        this.taskdesc = modalTextArea.value;
+    }
+}
+
 
 todoButton.addEventListener('click', todoButtonModal)
 span.addEventListener('click', spanCloseFunc)
@@ -67,10 +76,10 @@ function arrayLoop() {
 Notes:
 
 Modal submit, pushes to array like in library project
-Load array into todo list div
+Load array into todo list div, clear all array then load all
 Each todo list taks will have a delete button or button to check off
 If checked off strike through text
-If delete remove from array and todolist div
+If delete remove from array and todolist div, then reload all array
 
 below all tasks have button to remove all checked off items, loop through array and check if item is complete
 
