@@ -45,7 +45,7 @@ function formSubmitFunc() {
     console.log(modalDatee.value)
     console.log(modalTextArea.value)
 
-    todoListArray.push(modalTaskName.value)
+    // todoListArray.push(modalTaskName.value)
     console.log(todoListArray)
 
     // Add book to library
@@ -91,8 +91,21 @@ function createTodo(item) {
     // newDiv.style.backgroundColor = 'red'
     newDiv.setAttribute('id', 'testTodo')
     newDiv.setAttribute('class', 'testTodoClass')
-    newDiv.innerHTML = modalTaskName.value
-    newDiv.innerHTML += todoListArray[1].taskdesc
+    // newDiv.innerHTML = modalTaskName.value
+    console.log(item)
+    console.log(item.taskname)
+    // newDiv.innerHTML += todoListArray[0].taskname
+    // newDiv.innerHTML += todoListArray[0].taskpriority
+    // newDiv.innerHTML += todoListArray[0].taskdate
+    // newDiv.innerHTML += todoListArray[0].taskdesc
+
+    newDiv.innerHTML += item.taskname
+    newDiv.innerHTML += item.taskpriority
+    newDiv.innerHTML += item.taskdate
+    newDiv.innerHTML += item.taskdesc
+
+
+
 
     const todoMain = document.getElementById('todoMain')
 
