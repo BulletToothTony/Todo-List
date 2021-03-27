@@ -51,7 +51,7 @@ function formSubmitFunc() {
     // Add book to library
     newTodo = new TodoItem(modalTaskName.value, modalPriority.value, modalDatee.value, modalTextArea.value);
     todoListArray.push(newTodo)
-
+    
 
     // const newDiv = document.createElement('div')
     // // newDiv.style.backgroundColor = 'red'
@@ -99,19 +99,24 @@ function createTodo(item) {
     // newDiv.innerHTML += todoListArray[0].taskdate
     // newDiv.innerHTML += todoListArray[0].taskdesc
 
-    newDiv.innerHTML += item.taskname
-    newDiv.innerHTML += item.taskpriority
-    newDiv.innerHTML += item.taskdate
-    newDiv.innerHTML += item.taskdesc
-
-
-
+    newDiv.innerHTML += item.taskname + ' ';
+    newDiv.innerHTML += item.taskpriority + ' ';
+    newDiv.innerHTML += item.taskdate + ' ';
+    newDiv.innerHTML += item.taskdesc + ' ';
 
     const todoMain = document.getElementById('todoMain')
 
     todoMain.appendChild(newDiv)
-
+    todoListenCheck()
 }
+
+function todoListenCheck() {
+    document.querySelectorAll('.testTodoClass').forEach(item => 
+        item.addEventListener('click', e => {
+            console.log(e)
+            e.target.classList.toggle('textStriked')
+        }))
+    }
 
 // function pop() {
 //     todoListArray.pop()

@@ -116,4 +116,9 @@ body {
     background-color: greenyellow;
     padding: 2px;
     margin: 5px;
+    cursor: pointer;
+}
+
+.textStriked {
+    text-decoration: line-through;
 }
