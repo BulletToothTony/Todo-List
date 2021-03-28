@@ -17,6 +17,7 @@ const todomain = (() => {
 
     <div class="todo-extras">
         <button class="todo-button" id="todo-button">+</button>
+        <button class="todo-button" id="remove-tasks-button">Remove completed tasks</button>
     </div>
 
 </div>

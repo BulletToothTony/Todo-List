@@ -4,6 +4,7 @@ import { todomain } from "./todomain";
 console.log('Hello World');
 
 const todoButton = document.getElementById('todo-button')
+const removeTasks = document.getElementById('remove-tasks-button')
 const modal = document.getElementById('modal')
 const formSubmit = document.getElementById('formSubmit')
 
@@ -20,6 +21,7 @@ class TodoItem {
 
 
 todoButton.addEventListener('click', todoButtonModal)
+removeTasks.addEventListener('click', removeTasksFunc)
 span.addEventListener('click', spanCloseFunc)
 formSubmit.addEventListener('click', formSubmitFunc)
 
@@ -46,12 +48,13 @@ function formSubmitFunc() {
     console.log(modalTextArea.value)
 
     // todoListArray.push(modalTaskName.value)
-    console.log(todoListArray)
+    // console.log(todoListArray)
 
     // Add book to library
     newTodo = new TodoItem(modalTaskName.value, modalPriority.value, modalDatee.value, modalTextArea.value);
     todoListArray.push(newTodo)
     
+    console.log(todoListArray)
 
     // const newDiv = document.createElement('div')
     // // newDiv.style.backgroundColor = 'red'
@@ -92,17 +95,18 @@ function createTodo(item) {
     newDiv.setAttribute('id', 'testTodo')
     newDiv.setAttribute('class', 'testTodoClass')
     // newDiv.innerHTML = modalTaskName.value
-    console.log(item)
     console.log(item.taskname)
     // newDiv.innerHTML += todoListArray[0].taskname
     // newDiv.innerHTML += todoListArray[0].taskpriority
     // newDiv.innerHTML += todoListArray[0].taskdate
     // newDiv.innerHTML += todoListArray[0].taskdesc
 
-    newDiv.innerHTML += item.taskname + ' ';
-    newDiv.innerHTML += item.taskpriority + ' ';
-    newDiv.innerHTML += item.taskdate + ' ';
-    newDiv.innerHTML += item.taskdesc + ' ';
+    newDiv.innerHTML += item.taskname + '<br /> ';
+    newDiv.innerHTML += item.taskpriority + '<br /> ';
+    newDiv.innerHTML += item.taskdate + '<br /> ';
+    newDiv.innerHTML += item.taskdesc + '<br /> ';
+
+    newDiv.setAttribute('id', todoListArray.indexOf(item));
 
     const todoMain = document.getElementById('todoMain')
 
@@ -114,9 +118,22 @@ function todoListenCheck() {
     document.querySelectorAll('.testTodoClass').forEach(item => 
         item.addEventListener('click', e => {
             console.log(e)
-            e.target.classList.toggle('textStriked')
+            console.log('striked')
+            e.target.classList.add('textStriked')
         }))
     }
+
+
+function removeTasksFunc() {
+        let nodelisttodo = document.querySelectorAll('.textStriked') 
+        for (let i = 0; i < nodelisttodo.length; i++) {
+            todoListArray.splice(nodelisttodo[i].id, 1)
+            console.log(todoListArray)
+            console.log('clicked')
+            renderTodoList()
+        }
+}    
+
 
 // function pop() {
 //     todoListArray.pop()
