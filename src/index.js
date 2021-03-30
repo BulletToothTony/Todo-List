@@ -7,6 +7,7 @@ const todoButton = document.getElementById('todo-button')
 const removeTasks = document.getElementById('remove-tasks-button')
 const modal = document.getElementById('modal')
 const formSubmit = document.getElementById('formSubmit')
+const listSubmitBtn = document.getElementById('listSubmitBtn')
 
 var span = document.getElementsByClassName("close")[0];
 
@@ -24,6 +25,7 @@ todoButton.addEventListener('click', todoButtonModal)
 removeTasks.addEventListener('click', removeTasksFunc)
 span.addEventListener('click', spanCloseFunc)
 formSubmit.addEventListener('click', formSubmitFunc)
+listSubmitBtn.addEventListener('click', listSubmitBtnFunc)
 
 function todoButtonModal(){
     console.log('lol')
@@ -133,6 +135,12 @@ function removeTasksFunc() {
             renderTodoList()
         }
 }    
+
+function listSubmitBtnFunc(e) {
+    console.log('cliccccc')
+    console.log(e)
+    console.log(listNameForm.value)
+}
 
 
 // function pop() {
