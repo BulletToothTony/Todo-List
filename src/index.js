@@ -146,18 +146,21 @@ function listSubmitBtnFunc(e) {
     console.log(e)
     console.log(listNameForm.value)
     // Creat div and add to child of nav-left
+    FolderListArray.push(listNameForm.value)
+    console.log(FolderListArray)
+    renderFolderListArr()
+}
+
+function renderFolderListArr() {
     const listName = document.createElement('div')
     listName.setAttribute('id', 'listName')
     listName.setAttribute('class', 'blank')
-    listName.style.background = 'blue'
+    listName.style.background = 'green'
     listName.innerHTML = listNameForm.value
-    FolderListArray.push(listNameForm.value)
-    console.log(FolderListArray)
-
 
     const foldersDiv = document.getElementById('foldersDiv')
-    const todoMain = document.getElementById('todoMain')
     foldersDiv.appendChild(listName)
+
 }
 
 
