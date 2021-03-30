@@ -7,7 +7,7 @@ const leftnav = (() => {
     leftDiv.setAttribute('id', 'leftDiv')
     leftDiv.classList.add('nav-left')
     
-    leftDiv.innerHTML = `<nav class="nav-left">
+    leftDiv.innerHTML = `<nav class="nav-left" id="nav-left">
     <h1>My Todo List!</h1>
 
     <h2>My Folders <i class="far fa-folder"></i></h2>
@@ -17,6 +17,7 @@ const leftnav = (() => {
     </form>
 
     <button class="delete-btn" id="delete-btn">Delete</button> <i class="fas fa-trash"></i>
+    <div id="foldersDiv"></div>
 
 </nav>`
 

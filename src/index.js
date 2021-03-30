@@ -36,6 +36,7 @@ function spanCloseFunc() {
     modal.style.display = "none";
 }
 
+let FolderListArray = []
 let todoListArray = []
 let modalVal;
 let modalPri;
@@ -134,12 +135,29 @@ function removeTasksFunc() {
             console.log('clicked')
             renderTodoList()
         }
-}    
+}
 
+console.log(FolderListArray)
+
+
+// Will need array for keeping list of folder todo lists
 function listSubmitBtnFunc(e) {
     console.log('cliccccc')
     console.log(e)
     console.log(listNameForm.value)
+    // Creat div and add to child of nav-left
+    const listName = document.createElement('div')
+    listName.setAttribute('id', 'listName')
+    listName.setAttribute('class', 'blank')
+    listName.style.background = 'blue'
+    listName.innerHTML = listNameForm.value
+    FolderListArray.push(listNameForm.value)
+    console.log(FolderListArray)
+
+
+    const foldersDiv = document.getElementById('foldersDiv')
+    const todoMain = document.getElementById('todoMain')
+    foldersDiv.appendChild(listName)
 }
 
 
