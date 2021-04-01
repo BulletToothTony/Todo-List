@@ -51,6 +51,14 @@ body {
     width: 90%;
 }
 
+.todosNew {
+    background-color: rgb(138, 189, 0);
+    padding-top: 10px;
+    padding-left: 20px;
+    width: 90%;
+}
+
+
 .todo-button {
     cursor: pointer;
     font-size: 1.5rem;
@@ -123,4 +131,10 @@ body {
 
 .textStriked {
     text-decoration: line-through;
+}
+
+.blank {
+    cursor: pointer;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
 }

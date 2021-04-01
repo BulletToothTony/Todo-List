@@ -185,15 +185,51 @@ function createFolder(item) {
 
     const foldersDiv = document.getElementById('foldersDiv')
     foldersDiv.appendChild(listName)
+    folderHighlight()
+    renderNewMain()
 }
+
+function folderHighlight() {
+    console.log('highlighte')
+    document.querySelectorAll('.blank').forEach(item => 
+        item.addEventListener('click', e => {
+            console.log(e)
+            console.log('highlighterNEW')
+            e.target.style.color = 'yellow';
+            e.target.classList.add('removeFolder');
+        }))
+    }
+
 
 function trashBtnFunc() {
-    console.log('clcccllclc');
-    FolderListArray.pop();
-    console.log(FolderListArray)
-    renderFolderListArrNew()
+    // console.log('clcccllclc');
+    // FolderListArray.pop();
+    // console.log(FolderListArray)
+    // renderFolderListArrNew()
+
+    let nodelistfolders = document.querySelectorAll('.removeFolder') 
+        for (let i = 0; i < nodelistfolders.length; i++) {
+            FolderListArray.splice(nodelistfolders[i].id, 1)
+            console.log(FolderListArray)
+            console.log('clicked')
+            renderFolderListArrNew()
+        }
 
 }
+
+function renderNewMain() {
+    const newMain = document.createElement('div')
+    newMain.setAttribute('class', 'todosNew')
+
+    newMain.innerHTML = FolderListArray[0]
+
+    const ogMain = document.getElementById('mainContainer')
+    const todoMain = document.getElementById('todoMain')
+    todoMain.style.display = 'none';
+    ogMain.appendChild(newMain)
+
+}
+
 
 // function pop() {
 //     todoListArray.pop()
