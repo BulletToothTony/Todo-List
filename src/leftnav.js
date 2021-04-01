@@ -16,7 +16,7 @@ const leftnav = (() => {
         <button id="listSubmitBtn">Submit</button>
     </form>
 
-    <button class="delete-btn" id="delete-btn">Delete</button> <i class="fas fa-trash"></i>
+    <button class="delete-btn" id="delete-btn">Delete</button> <i id="trashBtn" class="fas fa-trash"></i>
     <div id="foldersDiv"></div>
 
 </nav>`

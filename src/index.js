@@ -8,6 +8,7 @@ const removeTasks = document.getElementById('remove-tasks-button')
 const modal = document.getElementById('modal')
 const formSubmit = document.getElementById('formSubmit')
 const listSubmitBtn = document.getElementById('listSubmitBtn')
+const trashBtn = document.getElementById('trashBtn')
 
 var span = document.getElementsByClassName("close")[0];
 
@@ -26,6 +27,7 @@ removeTasks.addEventListener('click', removeTasksFunc)
 span.addEventListener('click', spanCloseFunc)
 formSubmit.addEventListener('click', formSubmitFunc)
 listSubmitBtn.addEventListener('click', listSubmitBtnFunc)
+trashBtn.addEventListener('click', trashBtnFunc)
 
 function todoButtonModal(){
     console.log('lol')
@@ -148,10 +150,10 @@ function listSubmitBtnFunc(e) {
     // Creat div and add to child of nav-left
     FolderListArray.push(listNameForm.value)
     console.log(FolderListArray)
-    renderFolderListArr()
+    renderFolderListArrNew()
 }
 
-function renderFolderListArr() {
+function renderFolderListArrold() {
     const listName = document.createElement('div')
     listName.setAttribute('id', 'listName')
     listName.setAttribute('class', 'blank')
@@ -160,9 +162,38 @@ function renderFolderListArr() {
 
     const foldersDiv = document.getElementById('foldersDiv')
     foldersDiv.appendChild(listName)
-
 }
 
+function renderFolderListArrNew() {
+    const FolderMainDiv = document.getElementById('foldersDiv');
+    const folders = document.querySelectorAll('.blank');
+    folders.forEach(fldr => FolderMainDiv.removeChild(fldr))
+
+    
+    for (let i = 0; i < FolderListArray.length; i++) {
+        createFolder(FolderListArray[i]);
+    }
+}
+
+function createFolder(item) {
+    const listName = document.createElement('div')
+    listName.setAttribute('id', 'listName')
+    listName.setAttribute('class', 'blank')
+    listName.style.background = 'green'
+    // listName.innerHTML += listNameForm.value;
+    listName.innerHTML += item;
+
+    const foldersDiv = document.getElementById('foldersDiv')
+    foldersDiv.appendChild(listName)
+}
+
+function trashBtnFunc() {
+    console.log('clcccllclc');
+    FolderListArray.pop();
+    console.log(FolderListArray)
+    renderFolderListArrNew()
+
+}
 
 // function pop() {
 //     todoListArray.pop()
