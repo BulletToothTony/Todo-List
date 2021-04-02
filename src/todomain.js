@@ -11,7 +11,6 @@ const todomain = (() => {
     <h1 class="todo-header">Todo List:</h1>
 
     <div class="todo-list">
-        To do lists will go in here after rendering
     </div>
 
 

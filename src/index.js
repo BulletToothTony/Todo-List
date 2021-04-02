@@ -111,6 +111,14 @@ function createTodo(item) {
     newDiv.innerHTML += item.taskdate + '<br /> ';
     newDiv.innerHTML += item.taskdesc + '<br /> ';
 
+    if (item.taskpriority === 'Low') {
+        newDiv.style.border = '3px solid green';
+    } else if (item.taskpriority === 'Medium') {
+        newDiv.style.border = '3px solid yellow';
+    } else if (item.taskpriority === 'High') {
+        newDiv.style.border = '3px solid red';
+    }
+ 
     newDiv.setAttribute('id', todoListArray.indexOf(item));
 
     const todoMain = document.getElementById('todoMain')
@@ -224,6 +232,48 @@ function renderNewMain() {
 
 
     newMain.innerHTML = FolderListArray[0]
+    newMain.innerHTML = `<div class="todos" id=todoDiv>
+    <h1 class="todo-header">Todo List1:</h1>
+
+    <div class="todo-list">
+        To do lists will go in here after rendering
+    </div>
+
+
+    <div class="todo-extras">
+        <button class="todo-button" id="todo-button">+</button>
+        <button class="todo-button" id="remove-tasks-button">Remove completed tasks</button>
+    </div>
+
+</div>
+
+<div class="modal" id="modal">
+
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Todo form:</p>
+        <br>
+        <form onsubmit="return false" id="modalForm">
+            <input type="text" class="new-todo-task" id="modalTaskName" placeholder="New task name:">
+            <!-- <input type="text" class="new-todo-task" id="modalPriority" placeholder="Priority:"> -->
+            <label for="modalPriotity">Select Priotity:</label>
+            <select name="priority" id="modalPriority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <input type="text" class="new-todo-task" id="modalDatee" placeholder="Date:">
+            <textarea name="textareaTodo" id="modalTextArea" cols="30" rows="10" placeholder="Description..."></textarea>
+
+
+            <input type="submit" value="Submit" id="formSubmit">
+
+
+        </form>
+    </div>
+
+</div>`
+
 
     const ogMain = document.getElementById('mainContainer')
     const todoMain = document.getElementById('todoMain')
