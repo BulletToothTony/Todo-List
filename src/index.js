@@ -220,6 +220,8 @@ function trashBtnFunc() {
 function renderNewMain() {
     const newMain = document.createElement('div')
     newMain.setAttribute('class', 'todosNew')
+    newMain.setAttribute('id', 'todosNew')
+
 
     newMain.innerHTML = FolderListArray[0]
 
