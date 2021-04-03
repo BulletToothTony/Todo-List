@@ -80,13 +80,13 @@ h1, h2 {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
-    left: 30%;
+    left: 40%;
     top: 30%;
     width: 450px; /* Full width */
-    height: 450px; /* Full height */
+    height: 500px; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(57, 0, 189); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.664); /* Black w/ opacity */
+    background-color: rgba(0, 189, 25, 0.671); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.219); /* Black w/ opacity */
 }
 
 .modalFade {
@@ -96,11 +96,13 @@ h1, h2 {
 
 .modal-content {
     background-color: #fefefe;
+    border-radius: 5px;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    height: 350px;
+    height: 440px;
     width: 80%;
+    font-family: 'Libre Franklin', sans-serif;
   }
 
   /* The Close Button */
@@ -120,17 +122,33 @@ h1, h2 {
   transition: .5s linear;
 }
 
-.new-todo-task {
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+.modalTaskTitle {
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
-.testTodoClass {
+.new-todo-task {
+    font-family: 'Libre Franklin', sans-serif;
+    padding: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    /* background-color: rgba(39, 160, 2, 0.753); */
+    width: 95%;
+}
+
+.btnSubmitModal {
+    margin-left: 5px;
+    width: 95%;
+}
+
+.testTodoClass{
     background-color: rgb(233, 233, 233);
     padding: 2px;
     margin: 5px;
     cursor: pointer;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .textStriked {
@@ -138,7 +156,15 @@ h1, h2 {
 }
 
 .blank {
+    margin-top: 5px;
+    padding: 5px;
     cursor: pointer;
     padding-bottom: 5px;
     margin-bottom: 5px;
+    width: 80%;
 }
+
+.yellowclass {
+    color: yellow
+}
+

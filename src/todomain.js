@@ -25,10 +25,10 @@ const todomain = (() => {
 
     <div class="modal-content">
         <span class="close">&times;</span>
-        <p>Todo form:</p>
+        <p class="modalTaskTitle">New Task:</p>
         <br>
         <form onsubmit="return false" id="modalForm">
-            <input type="text" class="new-todo-task" id="modalTaskName" placeholder="New task name:">
+            <input type="text" class="new-todo-task" id="modalTaskName" placeholder="New task name:"> <br>
             <!-- <input type="text" class="new-todo-task" id="modalPriority" placeholder="Priority:"> -->
             <label for="modalPriotity">Select Priotity:</label>
             <select name="priority" id="modalPriority">
@@ -36,11 +36,13 @@ const todomain = (() => {
                 <option value="Medium">Medium</option>
                 <option value="High">High</option>
             </select>
-            <input type="text" class="new-todo-task" id="modalDatee" placeholder="Date:">
-            <textarea name="textareaTodo" id="modalTextArea" cols="30" rows="10" placeholder="Description..."></textarea>
+            <br>
+            <br>
+            <input type="text" class="new-todo-task" id="modalDatee" placeholder="Date Due:">
+            <textarea name="textareaTodo" id="modalTextArea" class="new-todo-task" cols="30" rows="10" placeholder="Description..."></textarea>
 
 
-            <input type="submit" value="Submit" id="formSubmit">
+            <input type="submit" value="Submit" class="btnSubmitModal" id="formSubmit">
 
 
         </form>

@@ -187,14 +187,14 @@ function createFolder(item) {
     const listName = document.createElement('div')
     listName.setAttribute('id', 'listName')
     listName.setAttribute('class', 'blank')
-    listName.style.background = 'green'
+    listName.style.background = 'rgb(99, 134, 0)'
     // listName.innerHTML += listNameForm.value;
     listName.innerHTML += item;
 
     const foldersDiv = document.getElementById('foldersDiv')
     foldersDiv.appendChild(listName)
     folderHighlight()
-    renderNewMain()
+    // renderNewMain()
 }
 
 function folderHighlight() {
@@ -204,6 +204,7 @@ function folderHighlight() {
             console.log(e)
             console.log('highlighterNEW')
             e.target.style.color = 'yellow';
+            // e.target.classList.toggle('yellowclass')
             e.target.classList.add('removeFolder');
         }))
     }
