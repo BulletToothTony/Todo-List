@@ -31,7 +31,7 @@ const todomain = (() => {
             <input type="text" class="new-todo-task" id="modalTaskName" placeholder="New task name:"> <br>
             <!-- <input type="text" class="new-todo-task" id="modalPriority" placeholder="Priority:"> -->
             <label for="modalPriotity">Select Priotity:</label>
-            <select name="priority" id="modalPriority">
+            <select name="priority" id="modalPriority" class="modalPriority">
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
                 <option value="High">High</option>

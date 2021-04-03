@@ -140,6 +140,11 @@ h1, h2 {
 .btnSubmitModal {
     margin-left: 5px;
     width: 95%;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.modalPriority {
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 .testTodoClass{
