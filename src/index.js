@@ -300,6 +300,9 @@ function renderNewMain() {
 /*
 Notes:
 
+Notes for tabbing, set tabname equal to a class in the todolist container, if tab is clicked and has same class
+set display to true, check this on discord
+
 Modal submit, pushes to array like in library project
 Load array into todo list div, clear all array then load all
 Each todo list taks will have a delete button or button to check off
